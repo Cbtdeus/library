@@ -30,8 +30,9 @@ function displayBooks(){
         deleteEntryButton = document.createElement("button")
         deleteEntryButton.textContent = "delete"
         deleteEntryButton.addEventListener("click", () => {
-            library.slice(i, 1)
+            library.splice(i, 1)
             bookDisplay.removeChild(document.getElementById(i))
+            displayBooks()
         })
         readToggleButton = document.createElement("button")
         readToggleButton.setAttribute("id", "readStatus" + i)
