@@ -34,14 +34,15 @@ function displayBooks(){
             bookDisplay.removeChild(document.getElementById(i))
         })
         readToggleButton = document.createElement("button")
+        readToggleButton.setAttribute("id", "readStatus" + i)
         readToggleButton.textContent = "Not read"
         readToggleButton.addEventListener("click", () => {
             library[i].read = !library[i].read
             if (library[i].read === true){
-                readToggleButton.textContent = "Read"
+                document.getElementById("readStatus" + i).textContent = "Read"
             }
             if (library[i].read === false){
-                readToggleButton.textContent = "Not read"
+                document.getElementById("readStatus" + i).textContent = "Not read"
             }
 
         })
